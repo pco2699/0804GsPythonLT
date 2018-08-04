@@ -9,11 +9,11 @@
 @snapend
 
 @snap[east]
-@size[10px](WealthNaviという会社でJavaエンジニア)
+@size[20px](WealthNaviという会社でJavaエンジニア)
 <br>
-@size[10px](ジーズアカデミー DEVコース 7期卒業)
+@size[20px](ジーズアカデミー DEVコース 7期卒業)
 <br>
-@size[10px](Python歴 : 2年ほど)
+@size[20px](Python歴 : 2年ほど)
 
 @snapend
 
