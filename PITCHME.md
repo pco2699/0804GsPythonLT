@@ -2,16 +2,18 @@
 
 ---
 @snap[north]
-### @pco2699
+@pco2699
 @snapend
 @snap[east]
 ![アイコン](assets/icon.jpg)
 @snapend
 
 @snap[west]
-- WealthNaviという会社でJavaエンジニア
-- ジーズアカデミー DEVコース 7期卒業
-- Python歴 : 2年ほど
+WealthNaviという会社でJavaエンジニア
+<br>
+ジーズアカデミー DEVコース 7期卒業
+<br>
+Python歴 : 2年ほど
 @snapend
 
 ---
