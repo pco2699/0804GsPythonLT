@@ -61,7 +61,7 @@
 ---
 
 ### 今回つくるもの
-![今回作るもの](assets/diagram1.jpg)
+![今回作るもの](assets/diagram1.png)
 
 ---
 
@@ -114,7 +114,7 @@ $ python -m grpc_tools.protoc -Iproto --python_out=. --grpc_python_out=. protos/
 
 ### 実際にインターフェースとしてPythonコードが生成されます
 helloworld_pb2_grpc.py
-```
+```python
 class GreeterServicer(object):
   # missing associated documentation comment in .proto file
   pass
@@ -130,6 +130,83 @@ class GreeterServicer(object):
 
 ---
 
+### 生成されたコードをimportしてサーバークライアントのコードを生成
+サーバー側のコード
+```
+from concurrent import futures
+import time
+
+import grpc
+
+# 生成したコードのインポート
+import helloworld_pb2
+import helloworld_pb2_grpc
+
+_ONE_DAY_IN_SECONDS = 60 * 60 * 24
+
+# .protoタイプで設定したインターフェースの内容をここで実装する
+class Greeter(helloworld_pb2_grpc.GreeterServicer):
+# 今回はシンプルにrequestからnameを取り出し、Hello, nameとReplyする
+    def SayHello(self, request, context):
+        print("name: " + request.name)
+        return helloworld_pb2.HelloReply(message='Hello! %s!' % request.name)
+
+# サーバーを立ち上げる処理
+def serve():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+    server.add_insecure_port('[::]:50051')
+    server.start()
+    try:
+        while True:
+            time.sleep(_ONE_DAY_IN_SECONDS)
+    except KeyboardInterrupt:
+        server.stop(0)
+
+
+if __name__ == '__main__':
+    serve()
+```
+
+---
+
+### クライアントのコードを生成
+クライアントのコード
+```
+
+from __future__ import print_function
+
+import grpc
+
+import helloworld_pb2
+import helloworld_pb2_grpc
+
+
+def run():
+    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
+    # used in circumstances in which the with statement does not fit the needs
+    # of the code.
+    with grpc.insecure_channel('localhost:50051') as channel:
+        # stubを作成 
+        stub = helloworld_pb2_grpc.GreeterStub(channel)
+        # stub経由でリクエストを生成しレスポンスを受け取る
+        response = stub.SayHello(helloworld_pb2.HelloRequest(name='pco2699'))
+    print("Greeter client received: " + response.message)
+
+
+if __name__ == '__main__':
+    run()
+```
+---
+
+### デモ
+
+---
+
+### 実際にgRPCを実装してみて
+- .protoファイルがAPIの仕様代わりとなるのがGood
+- .protoファイルからいろんな言語の実装を作れるので、言語に依存しない！
+- 型の効果はあんまり実感できなかったので、もっと複雑なアプリを作ってみたい！
 
 ---
 
