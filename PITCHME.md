@@ -1,18 +1,18 @@
 ### PythonでGRPCやってみた  
 
 ---
-
-### 自己紹介
-@snap[west]
+@snap[north]
+### @pco2699
+@snapend
+@snap[east]
 ![アイコン](assets/icon.jpg)
 @snapend
 
-@snap[east]
-- @pco2699 WealthNaviというスタートアップでJavaエンジニア
+@snap[west]
+- WealthNaviという会社でJavaエンジニア
 - ジーズアカデミー DEVコース 7期卒業
 - Python歴 : 2年ほど
 @snapend
-
 
 ---
 
