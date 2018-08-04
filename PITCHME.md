@@ -3,10 +3,15 @@
 ---
 
 ### 自己紹介
+@snap[west]
 ![アイコン](assets/icon.jpg)
+@snapend
+
+@snap[east]
 - @pco2699 WealthNaviというスタートアップでJavaエンジニア
 - ジーズアカデミー DEVコース 7期卒業
 - Python歴 : 2年ほど
+@snapend
 
 
 ---
