@@ -18,10 +18,15 @@
 @snapend
 
 ---
-
-### 今回のお題目
-![アイコン](assets/python_book.jpg | width=30px)  
-Python プロフェッショナルプログラミング 第3版
+@snap[north]
+今回のお題目
+@snapend
+@snap[west]
+![アイコン](assets/python_book.jpg)
+@snapend
+@snap[east]
+@size[20px](Python プロフェッショナルプログラミング 第3版)
+@snapend
 
 ---
 
