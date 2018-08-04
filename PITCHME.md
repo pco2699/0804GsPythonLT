@@ -20,7 +20,7 @@
 ---
 
 ### 今回のお題目
-![アイコン](assets/python_book.jpg | width=70px)
+![アイコン](assets/python_book.jpg | width=30px)  
 Python プロフェッショナルプログラミング 第3版
 
 ---
