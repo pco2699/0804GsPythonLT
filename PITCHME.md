@@ -4,16 +4,18 @@
 @snap[north]
 @pco2699
 @snapend
-@snap[east]
+@snap[west]
 ![アイコン](assets/icon.jpg)
 @snapend
 
-@snap[west]
+@snap[east]
+@size[10px](
 WealthNaviという会社でJavaエンジニア
 <br>
 ジーズアカデミー DEVコース 7期卒業
 <br>
 Python歴 : 2年ほど
+)
 @snapend
 
 ---
