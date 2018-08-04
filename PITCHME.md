@@ -74,7 +74,7 @@
 ---
 
 ### .protoファイルの作成
-- .protoファイル=APIの仕様を決めるインターフェースのようなファイル
+.protoファイル=APIの仕様を決めるインターフェースのようなファイル
 ```
 syntax = "proto3";
 
@@ -130,7 +130,7 @@ class GreeterServicer(object):
 
 ---
 
-### 生成されたコードをimportしてサーバークライアントのコードを生成
+### 生成されたコードをimportして実装
 サーバー側のコード
 ```
 from concurrent import futures
